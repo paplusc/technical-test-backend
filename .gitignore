@@ -13,6 +13,7 @@
 *.iws
 *.iml
 *.ipr
+target/**
 
 ### NetBeans ###
 nbproject/private/
@@ -21,3 +22,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
