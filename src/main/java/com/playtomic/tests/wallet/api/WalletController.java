@@ -34,11 +34,10 @@ public class WalletController {
     @GetMapping("/wallet/{id}")
     public Wallet getWallet(@PathVariable("id") final long id) {
         final Optional<Wallet> walletOptional = repository.findById(id);
-        if (walletOptional.isPresent()) {
-            return walletOptional.get();
-        } else {
+        if (!walletOptional.isPresent()) {
             throw new WalletException(Wallet.class, "id", String.valueOf(id));
         }
+        return walletOptional.get();
     }
 
     @PostMapping("/wallet/recharge")
